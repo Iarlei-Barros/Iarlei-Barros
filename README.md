@@ -46,7 +46,6 @@ Tenho interesse em desenvolvimento de software, principalmente Backend, estudand
 
 ---
 
-## Pac-Man
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Iarlei-Barros/Iarlei-Barros/output/pacman-contribution-graph-dark.svg">
