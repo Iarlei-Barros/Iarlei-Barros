@@ -40,8 +40,8 @@ Tenho interesse em desenvolvimento de software, principalmente Backend, estudand
 ## Estatísticas
 
 <p align="center">
-  <img height="150em" src="https://github-readme-stats-eight-theta.vercel.app/api?username=Iarlei-Barros&show_icons=true&theme=tokyonight&include_all_commits=true&locale=pt-br" />
-  <img height="150em" src="https://github-readme-stats-eight-theta.vercel.app/api/top-langs/?username=Iarlei-Barros&theme=tokyonight&layout=compact&langs_count=8" />
+  <img height="150em" src="https://github-readme-stats-eight-theta.vercel.app/api?username=Iarlei-Barros&show_icons=true&theme=dark&include_all_commits=true&locale=pt-br" />
+  <img height="150em" src="https://github-readme-stats-eight-theta.vercel.app/api/top-langs/?username=Iarlei-Barros&theme=dark&layout=compact&langs_count=8" />
 </p>
 
 ---
@@ -58,5 +58,5 @@ Tenho interesse em desenvolvimento de software, principalmente Backend, estudand
 ## Gráfico de Atividade
 
 <p align="center">
-  <img src="https://github-readme-activity-graph.vercel.app/graph?username=Iarlei-Barros&theme=tokyo-night&hide_border=true"/>
+  <img src="https://github-readme-activity-graph.vercel.app/graph?username=Iarlei-Barros&theme=dark&hide_border=true"/>
 </p>
