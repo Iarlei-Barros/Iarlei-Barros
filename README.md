@@ -1,57 +1,81 @@
-# Olá, sou o Iarlei Ferreira
+# 👋 Olá, eu sou o Iarlei Ferreira
 
 **`Desenvolvedor FullStack`**
 
-Me chamo Iarlei Ferreira de Barros, tenho 19 anos e moro em Aracati, Ceará. Atualmente, estou cursando Ciência da Computação no IFCE – Campus Aracati e sou Técnico em Eletrotécnica. Tenho grande interesse em desenvolvimento de software, principalmente backend, e estou sempre buscando aprender novas tecnologias e criar projetos práticos para evoluir como desenvolvedor.
+Me chamo **Iarlei Ferreira de Barros**, tenho 19 anos e sou de **Aracati - CE**.
+
+🎓 Atualmente curso **Ciência da Computação** no **IFCE – Campus Aracati** e sou **Técnico em Eletrotécnica**.
+
+💻 Tenho interesse em desenvolvimento de software, principalmente **Backend**, estudando tecnologias como **Java, JavaScript, Node.js, Express e MySQL**, além de fortalecer minha base em **Estruturas de Dados em C**.
+
+Sempre busco aprender novas tecnologias e desenvolver projetos práticos para evoluir como desenvolvedor.
 
 ---
 
-### 📱 Conecte-se comigo
+## 📱 Contato
 
 <p align="left">
-  <a href="https://github.com/Iarlei-Barros" target="_blank">
-    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg" width="30px" alt="GitHub" />
+  <a href="https://github.com/Iarlei-Barros">
+    <img src="https://skillicons.dev/icons?i=github" />
   </a>
-  <!-- Adicione seu LinkedIn quando criar -->
   <!--
-  <a href="SEU_LINKEDIN" target="_blank">
-    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linkedin/linkedin-original.svg" width="30px" alt="LinkedIn" />
+  <a href="SEU_LINKEDIN">
+    <img src="https://skillicons.dev/icons?i=linkedin" />
   </a>
   -->
 </p>
 
 ---
 
-### 💻 Linguagens e Tecnologias
-
-<p align="left">
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg" width="35" title="Java"/>
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/c/c-original.svg" width="35" title="C"/>
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" width="35" title="JavaScript"/>
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg" width="35" title="Node.js"/>
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/express/express-original.svg" width="35" title="Express"/>
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg" width="35" title="MySQL"/>
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg" width="35" title="Git"/>
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg" width="35" title="GitHub"/>
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/eclipse/eclipse-original.svg" width="35" title="Eclipse"/>
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vscode/vscode-original.svg" width="35" title="VS Code"/>
-</p>
-
----
-
-### 📊 Estatísticas
+## 💻 Tecnologias
 
 <p align="center">
-  <img height="150em" align="center" src="https://github-readme-stats-eight-theta.vercel.app/api?username=Iarlei-Barros&show_icons=true&theme=tokyonight&include_all_commits=true&locale=pt-br" />
-  <img height="150em" align="center" src="https://github-readme-stats-eight-theta.vercel.app/api/top-langs/?username=Iarlei-Barros&theme=tokyonight&layout=compact&langs_count=8" />
+  <img src="https://skillicons.dev/icons?i=java,c,javascript,nodejs,express,mysql,git,github,vscode,eclipse" />
 </p>
 
 ---
 
-### 🟡 Pac-Man
+## 📊 Estatísticas
 
+<p align="center">
+  <img height="170em" src="https://github-readme-stats.vercel.app/api?username=Iarlei-Barros&show_icons=true&theme=tokyonight&include_all_commits=true&count_private=true"/>
+  <img height="170em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=Iarlei-Barros&layout=compact&langs_count=8&theme=tokyonight"/>
+</p>
+
+---
+
+## 🔥 Sequência de Contribuições
+
+<p align="center">
+  <img src="https://streak-stats.demolab.com?user=Iarlei-Barros&theme=tokyonight&hide_border=true"/>
+</p>
+
+---
+
+## 🟡 Pac-Man
+
+<p align="center">
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Iarlei-Barros/Iarlei-Barros/output/pacman-contribution-graph-dark.svg">
   <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/Iarlei-Barros/Iarlei-Barros/output/pacman-contribution-graph.svg">
   <img alt="Pac-Man contribution graph" src="https://raw.githubusercontent.com/Iarlei-Barros/Iarlei-Barros/output/pacman-contribution-graph.svg">
 </picture>
+</p>
+
+---
+
+## 📈 Gráfico de Atividade
+
+<p align="center">
+  <img src="https://github-readme-activity-graph.vercel.app/graph?username=Iarlei-Barros&theme=tokyo-night&hide_border=true"/>
+</p>
+
+---
+
+<div align="center">
+
+### ⭐ Obrigado pela visita!
+
+*"A melhor forma de aprender é construindo projetos."*
+
+</div>
