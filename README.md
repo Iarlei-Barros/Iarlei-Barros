@@ -16,6 +16,10 @@ Tenho interesse em desenvolvimento de software, principalmente Backend, estudand
   <a href="https://github.com/Iarlei-Barros">
     <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg" width="30px"/>
   </a>
+
+  <a href="https://linkedin.com/in/iarlei-ferreira-ti">
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linkedin/linkedin-original.svg" width="30px" style="margin-left: 10px;"/>
+  </a>
 </p>
 
 ---
