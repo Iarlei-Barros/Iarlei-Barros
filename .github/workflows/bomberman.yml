@@ -19,11 +19,11 @@ jobs:
     timeout-minutes: 5
 
     steps:
-      - name: Generate arcade graphs
+      - name: Generate Bomberman graph
         uses: abozanona/pacman-contribution-graph@main
         with:
           github_user_name: ${{ github.repository_owner }}
-          games: "pacman"
+          games: "bomberman"
 
       - name: Publish
         uses: crazy-max/ghaction-github-pages@v3.1.0
