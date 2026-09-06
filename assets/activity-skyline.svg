@@ -1,67 +1,43 @@
 <svg xmlns="http://www.w3.org/2000/svg"
-    viewBox="0 0 900 320"
-    width="900"
-    height="320"
-    role="img"
-    aria-label="Contribution Skyline de Iarlei-Barros">
+        width="900"
+        height="320"
+        viewBox="0 0 900 320">
 
     <defs>
 
-        <!-- Tokyo Night -->
+        <linearGradient id="background"
+            x1="0" y1="0"
+            x2="0" y2="1">
 
-        <linearGradient
-            id="sky"
-            x1="0"
-            y1="0"
-            x2="0"
-            y2="1">
-
-            <stop
-                offset="0%"
+            <stop offset="0%"
                 stop-color="#1a1b26"/>
 
-            <stop
-                offset="55%"
+            <stop offset="100%"
                 stop-color="#16161e"/>
-
-            <stop
-                offset="100%"
-                stop-color="#0f111a"/>
 
         </linearGradient>
 
+        <linearGradient id="floor"
+            x1="0" y1="0"
+            x2="0" y2="1">
 
-        <radialGradient
-            id="glow"
-            cx="0.45"
-            cy="1"
-            r="0.7">
+            <stop offset="0%"
+                stop-color="#24283b"/>
 
-            <stop
-                offset="0%"
-                stop-color="#bb9af7"
-                stop-opacity="0.28"/>
+            <stop offset="100%"
+                stop-color="#16161e"/>
 
-            <stop
-                offset="100%"
-                stop-color="#bb9af7"
-                stop-opacity="0"/>
+        </linearGradient>
 
-        </radialGradient>
-
-
-        <filter id="neon">
+        <filter id="softGlow">
 
             <feGaussianBlur
-                stdDeviation="2.5"
+                stdDeviation="5"
                 result="blur"/>
 
             <feMerge>
-
                 <feMergeNode in="blur"/>
-
                 <feMergeNode in="SourceGraphic"/>
-
             </feMerge>
 
         </filter>
@@ -74,43 +50,33 @@
     <rect
         width="900"
         height="320"
-        fill="url(#sky)"/>
+        fill="url(#background)"/>
 
 
-    <!-- STARS -->
+    <!-- ESTRELAS -->
 
-    <g fill="#c0caf5">
+    <g fill="#9aa5ce" opacity="0.75">
 
-        <circle cx="70" cy="35" r="0.8"/>
-        <circle cx="160" cy="22" r="1"/>
-        <circle cx="260" cy="50" r="0.7"/>
-        <circle cx="380" cy="28" r="1.1"/>
-        <circle cx="510" cy="58" r="0.8"/>
-        <circle cx="650" cy="32" r="1"/>
-        <circle cx="780" cy="60" r="0.7"/>
+        <circle cx="250" cy="28" r="1"/>
+        <circle cx="355" cy="54" r="1"/>
+        <circle cx="438" cy="25" r="1"/>
+        <circle cx="520" cy="70" r="1"/>
+        <circle cx="612" cy="38" r="1"/>
+        <circle cx="695" cy="60" r="1"/>
+        <circle cx="815" cy="35" r="1"/>
 
     </g>
 
 
-    <!-- HORIZON -->
-
-    <ellipse
-        cx="300"
-        cy="280"
-        rx="390"
-        ry="60"
-        fill="url(#glow)"/>
-
-
-    <!-- HEADER -->
+    <!-- TÍTULO -->
 
     <text
-        x="30"
-        y="30"
-        font-family="Inter, system-ui, sans-serif"
-        font-size="15"
-        font-weight="700"
-        fill="#c0caf5">
+        x="28"
+        y="28"
+        fill="#7aa2f7"
+        font-family="Arial, sans-serif"
+        font-size="16"
+        font-weight="bold">
 
         Contribution Skyline
 
@@ -118,485 +84,500 @@
 
 
     <text
-        x="30"
-        y="49"
-        font-family="JetBrains Mono, monospace"
-        font-size="9"
+        x="28"
+        y="47"
         fill="#bb9af7"
+        font-family="monospace"
+        font-size="8"
         letter-spacing="3">
 
-        2026 · IARLEI-BARROS
+        180 DAYS · IARLEI-BARROS
 
     </text>
 
 
-    <!-- GROUND -->
+    <!-- ÁREA DO GRÁFICO -->
 
-    <polygon
-        points="20,285 540,285 565,272 45,272"
-        fill="#111522"
-        opacity="0.85"/>
-
-    <polygon
-        points="20,285 540,285 565,272 45,272"
+    <path
+        d="M20 268 L510 268 L545 250 L545 75"
         fill="none"
         stroke="#292e42"
-        stroke-width="0.7"/>
+        stroke-width="1"/>
 
 
-    <!-- ===================================== -->
-    <!-- BACK ROW -->
-    <!-- ===================================== -->
-
-    <polygon
-        points="43,255 66,255 66,237 43,237"
-        fill="#292e42"/>
-    
-    <polygon
-        points="66,255 77,249 77,231 66,237"
-        fill="#1f2335"/>
-    
-    <polygon
-        points="43,237 66,237 77,231 54,231"
-        fill="#3b4261"/>
-    
-    <polygon
-        points="71,255 94,255 94,237 71,237"
-        fill="#292e42"/>
-    
-    <polygon
-        points="94,255 105,249 105,231 94,237"
-        fill="#1f2335"/>
-    
-    <polygon
-        points="71,237 94,237 105,231 82,231"
-        fill="#3b4261"/>
-    
-    <polygon
-        points="99,255 122,255 122,237 99,237"
-        fill="#292e42"/>
-    
-    <polygon
-        points="122,255 133,249 133,231 122,237"
-        fill="#1f2335"/>
-    
-    <polygon
-        points="99,237 122,237 133,231 110,231"
-        fill="#3b4261"/>
-    
-    <polygon
-        points="127,255 150,255 150,215 127,215"
-        fill="#3d59a1"/>
-    
-    <polygon
-        points="150,255 161,249 161,209 150,215"
-        fill="#293b73"/>
-    
-    <polygon
-        points="127,215 150,215 161,209 138,209"
-        fill="#7aa2f7"/>
-    
-    <polygon
-        points="155,255 178,255 178,237 155,237"
-        fill="#292e42"/>
-    
-    <polygon
-        points="178,255 189,249 189,231 178,237"
-        fill="#1f2335"/>
-    
-    <polygon
-        points="155,237 178,237 189,231 166,231"
-        fill="#3b4261"/>
-    
-    <polygon
-        points="183,255 206,255 206,237 183,237"
-        fill="#292e42"/>
-    
-    <polygon
-        points="206,255 217,249 217,231 206,237"
-        fill="#1f2335"/>
-    
-    <polygon
-        points="183,237 206,237 217,231 194,231"
-        fill="#3b4261"/>
-    
-    <polygon
-        points="211,255 234,255 234,237 211,237"
-        fill="#292e42"/>
-    
-    <polygon
-        points="234,255 245,249 245,231 234,237"
-        fill="#1f2335"/>
-    
-    <polygon
-        points="211,237 234,237 245,231 222,231"
-        fill="#3b4261"/>
-    
-    <polygon
-        points="239,255 262,255 262,237 239,237"
-        fill="#292e42"/>
-    
-    <polygon
-        points="262,255 273,249 273,231 262,237"
-        fill="#1f2335"/>
-    
-    <polygon
-        points="239,237 262,237 273,231 250,231"
-        fill="#3b4261"/>
-    
-    <polygon
-        points="267,255 290,255 290,237 267,237"
-        fill="#292e42"/>
-    
-    <polygon
-        points="290,255 301,249 301,231 290,237"
-        fill="#1f2335"/>
-    
-    <polygon
-        points="267,237 290,237 301,231 278,231"
-        fill="#3b4261"/>
-    
-    <!-- ===================================== -->
-    <!-- FRONT ROW -->
-    <!-- ===================================== -->
-    
-    <polygon
-        points="35,275 58,275 58,257 35,257"
-        fill="#292e42"/>
-    
-    <polygon
-        points="58,275 69,269 69,251 58,257"
-        fill="#1f2335"/>
-    
-    <polygon
-        points="35,257 58,257 69,251 46,251"
-        fill="#3b4261"/>
-    
-    <polygon
-        points="63,275 86,275 86,257 63,257"
-        fill="#292e42"/>
-    
-    <polygon
-        points="86,275 97,269 97,251 86,257"
-        fill="#1f2335"/>
-    
-    <polygon
-        points="63,257 86,257 97,251 74,251"
-        fill="#3b4261"/>
-    
-    <polygon
-        points="91,275 114,275 114,257 91,257"
-        fill="#292e42"/>
-    
-    <polygon
-        points="114,275 125,269 125,251 114,257"
-        fill="#1f2335"/>
-    
-    <polygon
-        points="91,257 114,257 125,251 102,251"
-        fill="#3b4261"/>
-    
-    <polygon
-        points="119,275 142,275 142,257 119,257"
-        fill="#292e42"/>
-    
-    <polygon
-        points="142,275 153,269 153,251 142,257"
-        fill="#1f2335"/>
-    
-    <polygon
-        points="119,257 142,257 153,251 130,251"
-        fill="#3b4261"/>
-    
-    <polygon
-        points="147,275 170,275 170,125 147,125"
-        fill="#b44c70"/>
-    
-    <polygon
-        points="170,275 181,269 181,119 170,125"
-        fill="#7a3152"/>
-    
-    <polygon
-        points="147,125 170,125 181,119 158,119"
-        fill="#f7768e"/>
-    
-        <polygon
-            points="147,125 170,125 181,119 158,119"
-            fill="none"
-            stroke="#f7768e"
-            stroke-width="1.5"
-            filter="url(#neon)"/>
-        
-    <polygon
-        points="175,275 198,275 198,230 175,230"
-        fill="#3d59a1"/>
-    
-    <polygon
-        points="198,275 209,269 209,224 198,230"
-        fill="#293b73"/>
-    
-    <polygon
-        points="175,230 198,230 209,224 186,224"
-        fill="#7aa2f7"/>
-    
-    <polygon
-        points="203,275 226,275 226,244 203,244"
-        fill="#3d59a1"/>
-    
-    <polygon
-        points="226,275 237,269 237,238 226,244"
-        fill="#293b73"/>
-    
-    <polygon
-        points="203,244 226,244 237,238 214,238"
-        fill="#7aa2f7"/>
-    
-    <polygon
-        points="231,275 254,275 254,257 231,257"
-        fill="#292e42"/>
-    
-    <polygon
-        points="254,275 265,269 265,251 254,257"
-        fill="#1f2335"/>
-    
-    <polygon
-        points="231,257 254,257 265,251 242,251"
-        fill="#3b4261"/>
-    
-    <polygon
-        points="259,275 282,275 282,230 259,230"
-        fill="#3d59a1"/>
-    
-    <polygon
-        points="282,275 293,269 293,224 282,230"
-        fill="#293b73"/>
-    
-    <polygon
-        points="259,230 282,230 293,224 270,224"
-        fill="#7aa2f7"/>
-    
-    <line
-        x1="570"
-        y1="40"
-        x2="570"
-        y2="270"
+    <path
+        d="M20 268 L510 268 L545 250"
+        fill="url(#floor)"
         stroke="#292e42"
-        stroke-width="0.7"/>
-
-
-    <g
-        transform="translate(600,65)"
-        font-family="JetBrains Mono, monospace">
-
-        <text
-            font-size="9"
-            fill="#bb9af7"
-            letter-spacing="3">
-
-            — ACTIVITY
-
-        </text>
-
-
-        <g transform="translate(0,25)">
-
-            <rect
-                width="10"
-                height="10"
-                fill="#7aa2f7"/>
-
-            <text
-                x="20"
-                y="9"
-                font-size="9"
-                fill="#a9b1d6">
-
-                low · activity
-
-            </text>
-
-        </g>
-
-
-        <g transform="translate(0,45)">
-
-            <rect
-                width="10"
-                height="10"
-                fill="#7dcfff"/>
-
-            <text
-                x="20"
-                y="9"
-                font-size="9"
-                fill="#a9b1d6">
-
-                mid · activity
-
-            </text>
-
-        </g>
-
-
-        <g transform="translate(0,65)">
-
-            <rect
-                width="10"
-                height="10"
-                fill="#bb9af7"/>
-
-            <text
-                x="20"
-                y="9"
-                font-size="9"
-                fill="#a9b1d6">
-
-                high · activity
-
-            </text>
-
-        </g>
-
-
-        <g transform="translate(0,85)">
-
-            <rect
-                width="10"
-                height="10"
-                fill="#f7768e"/>
-
-            <text
-                x="20"
-                y="9"
-                font-size="9"
-                fill="#a9b1d6">
-
-                peak · activity
-
-            </text>
-
-        </g>
-
-
-        <line
-            x1="0"
-            y1="110"
-            x2="190"
-            y2="110"
-            stroke="#292e42"
-            stroke-width="0.5"/>
-
-
-        <text
-            y="135"
-            font-size="9"
-            fill="#bb9af7"
-            letter-spacing="3">
-
-            — PROFILE
-
-        </text>
-
-
-        <text
-            y="157"
-            font-size="9"
-            fill="#a9b1d6">
-
-            contributions
-
-        </text>
-
-        <text
-            x="190"
-            y="157"
-            text-anchor="end"
-            font-size="11"
-            fill="#7dcfff"
-            font-weight="700">
-
-            49
-
-        </text>
-
-
-        <text
-            y="178"
-            font-size="9"
-            fill="#a9b1d6">
-
-            active days
-
-        </text>
-
-        <text
-            x="190"
-            y="178"
-            text-anchor="end"
-            font-size="11"
-            fill="#bb9af7"
-            font-weight="700">
-
-            9
-
-        </text>
-
-
-        <text
-            y="199"
-            font-size="9"
-            fill="#a9b1d6">
-
-            peak period
-
-        </text>
-
-        <text
-            x="190"
-            y="199"
-            text-anchor="end"
-            font-size="11"
-            fill="#f7768e"
-            font-weight="700">
-
-            29
-
-        </text>
-
-
-        <text
-            y="220"
-            font-size="9"
-            fill="#a9b1d6">
-
-            period
-
-        </text>
-
-        <text
-            x="190"
-            y="220"
-            text-anchor="end"
-            font-size="10"
-            fill="#c0caf5"
-            font-weight="700">
-
-            180 DAYS
-
-        </text>
-
-    </g>
-
-
-    <!-- FOOTER -->
+        stroke-width="1"/>
+
+
+    <!-- LINHA DE HORIZONTE -->
+
+    <line
+        x1="20"
+        y1="268"
+        x2="545"
+        y2="268"
+        stroke="#565f89"
+        stroke-width="1"
+        opacity="0.7"/>
+
+
+    <!-- TORRES -->
+
+    <polygon points="82,240.0 91,235.05 91,253.05 82,258"
+        fill="#1f2335"
+        stroke="#292e42"
+        stroke-width="1"/>
+
+    <polygon points="48,240.0 82,240.0 91,235.05 57,235.05"
+        fill="#3b4261"
+        stroke="#292e42"
+        stroke-width="1"/>
+
+    <polygon points="48,240.0 82,240.0 82,258 48,258"
+        fill="#292e42"
+        stroke="#292e42"
+        stroke-width="1"/>
+    
+    <polygon points="123,240.0 132,235.05 132,253.05 123,258"
+        fill="#1f2335"
+        stroke="#292e42"
+        stroke-width="1"/>
+
+    <polygon points="89,240.0 123,240.0 132,235.05 98,235.05"
+        fill="#3b4261"
+        stroke="#292e42"
+        stroke-width="1"/>
+
+    <polygon points="89,240.0 123,240.0 123,258 89,258"
+        fill="#292e42"
+        stroke="#292e42"
+        stroke-width="1"/>
+    
+    <polygon points="164,240.0 173,235.05 173,253.05 164,258"
+        fill="#1f2335"
+        stroke="#292e42"
+        stroke-width="1"/>
+
+    <polygon points="130,240.0 164,240.0 173,235.05 139,235.05"
+        fill="#3b4261"
+        stroke="#292e42"
+        stroke-width="1"/>
+
+    <polygon points="130,240.0 164,240.0 164,258 130,258"
+        fill="#292e42"
+        stroke="#292e42"
+        stroke-width="1"/>
+    
+    <polygon points="205,215.0 214,210.05 214,253.05 205,258"
+        fill="#3d59a1"
+        stroke="#292e42"
+        stroke-width="1"/>
+
+    <polygon points="171,215.0 205,215.0 214,210.05 180,210.05"
+        fill="#9db8ff"
+        stroke="#292e42"
+        stroke-width="1"/>
+
+    <polygon points="171,215.0 205,215.0 205,258 171,258"
+        fill="#7aa2f7"
+        stroke="#292e42"
+        stroke-width="1"/>
+    
+    <polygon points="246,240.0 255,235.05 255,253.05 246,258"
+        fill="#1f2335"
+        stroke="#292e42"
+        stroke-width="1"/>
+
+    <polygon points="212,240.0 246,240.0 255,235.05 221,235.05"
+        fill="#3b4261"
+        stroke="#292e42"
+        stroke-width="1"/>
+
+    <polygon points="212,240.0 246,240.0 246,258 212,258"
+        fill="#292e42"
+        stroke="#292e42"
+        stroke-width="1"/>
+    
+    <polygon points="287,240.0 296,235.05 296,253.05 287,258"
+        fill="#1f2335"
+        stroke="#292e42"
+        stroke-width="1"/>
+
+    <polygon points="253,240.0 287,240.0 296,235.05 262,235.05"
+        fill="#3b4261"
+        stroke="#292e42"
+        stroke-width="1"/>
+
+    <polygon points="253,240.0 287,240.0 287,258 253,258"
+        fill="#292e42"
+        stroke="#292e42"
+        stroke-width="1"/>
+    
+    <polygon points="328,240.0 337,235.05 337,253.05 328,258"
+        fill="#1f2335"
+        stroke="#292e42"
+        stroke-width="1"/>
+
+    <polygon points="294,240.0 328,240.0 337,235.05 303,235.05"
+        fill="#3b4261"
+        stroke="#292e42"
+        stroke-width="1"/>
+
+    <polygon points="294,240.0 328,240.0 328,258 294,258"
+        fill="#292e42"
+        stroke="#292e42"
+        stroke-width="1"/>
+    
+    <polygon points="369,240.0 378,235.05 378,253.05 369,258"
+        fill="#1f2335"
+        stroke="#292e42"
+        stroke-width="1"/>
+
+    <polygon points="335,240.0 369,240.0 378,235.05 344,235.05"
+        fill="#3b4261"
+        stroke="#292e42"
+        stroke-width="1"/>
+
+    <polygon points="335,240.0 369,240.0 369,258 335,258"
+        fill="#292e42"
+        stroke="#292e42"
+        stroke-width="1"/>
+    
+    <polygon points="410,240.0 419,235.05 419,253.05 410,258"
+        fill="#1f2335"
+        stroke="#292e42"
+        stroke-width="1"/>
+
+    <polygon points="376,240.0 410,240.0 419,235.05 385,235.05"
+        fill="#3b4261"
+        stroke="#292e42"
+        stroke-width="1"/>
+
+    <polygon points="376,240.0 410,240.0 410,258 376,258"
+        fill="#292e42"
+        stroke="#292e42"
+        stroke-width="1"/>
+    
+    <polygon points="451,240.0 460,235.05 460,253.05 451,258"
+        fill="#1f2335"
+        stroke="#292e42"
+        stroke-width="1"/>
+
+    <polygon points="417,240.0 451,240.0 460,235.05 426,235.05"
+        fill="#3b4261"
+        stroke="#292e42"
+        stroke-width="1"/>
+
+    <polygon points="417,240.0 451,240.0 451,258 417,258"
+        fill="#292e42"
+        stroke="#292e42"
+        stroke-width="1"/>
+    
+    <polygon points="492,240.0 501,235.05 501,253.05 492,258"
+        fill="#1f2335"
+        stroke="#292e42"
+        stroke-width="1"/>
+
+    <polygon points="458,240.0 492,240.0 501,235.05 467,235.05"
+        fill="#3b4261"
+        stroke="#292e42"
+        stroke-width="1"/>
+
+    <polygon points="458,240.0 492,240.0 492,258 458,258"
+        fill="#292e42"
+        stroke="#292e42"
+        stroke-width="1"/>
+    
+    <polygon points="533,240.0 542,235.05 542,253.05 533,258"
+        fill="#1f2335"
+        stroke="#292e42"
+        stroke-width="1"/>
+
+    <polygon points="499,240.0 533,240.0 542,235.05 508,235.05"
+        fill="#3b4261"
+        stroke="#292e42"
+        stroke-width="1"/>
+
+    <polygon points="499,240.0 533,240.0 533,258 499,258"
+        fill="#292e42"
+        stroke="#292e42"
+        stroke-width="1"/>
+    
+    <polygon points="574,240.0 583,235.05 583,253.05 574,258"
+        fill="#1f2335"
+        stroke="#292e42"
+        stroke-width="1"/>
+
+    <polygon points="540,240.0 574,240.0 583,235.05 549,235.05"
+        fill="#3b4261"
+        stroke="#292e42"
+        stroke-width="1"/>
+
+    <polygon points="540,240.0 574,240.0 574,258 540,258"
+        fill="#292e42"
+        stroke="#292e42"
+        stroke-width="1"/>
+    
+    <polygon points="615,95.0 624,90.05 624,253.05 615,258"
+        fill="#a33e5f"
+        stroke="#292e42"
+        stroke-width="1"/>
+
+    <polygon points="581,95.0 615,95.0 624,90.05 590,90.05"
+        fill="#ff9db2"
+        stroke="#292e42"
+        stroke-width="1"/>
+
+    <polygon points="581,95.0 615,95.0 615,258 581,258"
+        fill="#f7768e"
+        stroke="#292e42"
+        stroke-width="1"/>
+    
+    <polygon points="656,210.0 665,205.05 665,253.05 656,258"
+        fill="#3d59a1"
+        stroke="#292e42"
+        stroke-width="1"/>
+
+    <polygon points="622,210.0 656,210.0 665,205.05 631,205.05"
+        fill="#9db8ff"
+        stroke="#292e42"
+        stroke-width="1"/>
+
+    <polygon points="622,210.0 656,210.0 656,258 622,258"
+        fill="#7aa2f7"
+        stroke="#292e42"
+        stroke-width="1"/>
+    
+    <polygon points="697,225.0 706,220.05 706,253.05 697,258"
+        fill="#3d59a1"
+        stroke="#292e42"
+        stroke-width="1"/>
+
+    <polygon points="663,225.0 697,225.0 706,220.05 672,220.05"
+        fill="#9db8ff"
+        stroke="#292e42"
+        stroke-width="1"/>
+
+    <polygon points="663,225.0 697,225.0 697,258 663,258"
+        fill="#7aa2f7"
+        stroke="#292e42"
+        stroke-width="1"/>
+    
+    <polygon points="738,240.0 747,235.05 747,253.05 738,258"
+        fill="#1f2335"
+        stroke="#292e42"
+        stroke-width="1"/>
+
+    <polygon points="704,240.0 738,240.0 747,235.05 713,235.05"
+        fill="#3b4261"
+        stroke="#292e42"
+        stroke-width="1"/>
+
+    <polygon points="704,240.0 738,240.0 738,258 704,258"
+        fill="#292e42"
+        stroke="#292e42"
+        stroke-width="1"/>
+    
+    <polygon points="779,205.0 788,200.05 788,253.05 779,258"
+        fill="#3d59a1"
+        stroke="#292e42"
+        stroke-width="1"/>
+
+    <polygon points="745,205.0 779,205.0 788,200.05 754,200.05"
+        fill="#9db8ff"
+        stroke="#292e42"
+        stroke-width="1"/>
+
+    <polygon points="745,205.0 779,205.0 779,258 745,258"
+        fill="#7aa2f7"
+        stroke="#292e42"
+        stroke-width="1"/>
+    
+
+    <!-- DIVISÓRIA -->
+
+    <line
+        x1="565"
+        y1="38"
+        x2="565"
+        y2="250"
+        stroke="#292e42"
+        stroke-width="1"/>
+
+
+    <!-- ACTIVITY -->
 
     <text
-        x="30"
-        y="302"
-        font-family="JetBrains Mono, monospace"
-        font-size="8"
-        letter-spacing="2"
-        fill="#565f89">
+        x="592"
+        y="62"
+        fill="#bb9af7"
+        font-family="monospace"
+        font-size="9"
+        letter-spacing="3">
+
+        — ACTIVITY
+
+    </text>
+
+
+    <rect x="592" y="85"
+        width="11" height="11"
+        rx="1"
+        fill="#7aa2f7"/>
+
+    <text
+        x="615"
+        y="94"
+        fill="#c0caf5"
+        font-family="monospace"
+        font-size="9">
+
+        low · activity
+
+    </text>
+
+
+    <rect x="592" y="106"
+        width="11" height="11"
+        rx="1"
+        fill="#7dcfff"/>
+
+    <text
+        x="615"
+        y="115"
+        fill="#c0caf5"
+        font-family="monospace"
+        font-size="9">
+
+        mid · activity
+
+    </text>
+
+
+    <rect x="592" y="127"
+        width="11" height="11"
+        rx="1"
+        fill="#bb9af7"/>
+
+    <text
+        x="615"
+        y="136"
+        fill="#c0caf5"
+        font-family="monospace"
+        font-size="9">
+
+        high · activity
+
+    </text>
+
+
+    <rect x="592" y="148"
+        width="11"
+        height="11"
+        rx="1"
+        fill="#f7768e"/>
+
+    <text
+        x="615"
+        y="157"
+        fill="#c0caf5"
+        font-family="monospace"
+        font-size="9">
+
+        peak · activity
+
+    </text>
+
+
+    <!-- SEPARADOR -->
+
+    <line
+        x1="592"
+        y1="177"
+        x2="820"
+        y2="177"
+        stroke="#292e42"
+        stroke-width="1"/>
+
+
+    <!-- PROFILE -->
+
+    <text
+        x="592"
+        y="201"
+        fill="#bb9af7"
+        font-family="monospace"
+        font-size="9"
+        letter-spacing="3">
+
+        — PROFILE
+
+    </text>
+
+
+    <text
+        x="592"
+        y="224"
+        fill="#c0caf5"
+        font-family="monospace"
+        font-size="9">
+
+        contributions
+
+    </text>
+
+    <text
+        x="815"
+        y="224"
+        fill="#7dcfff"
+        font-family="monospace"
+        font-size="10"
+        font-weight="bold"
+        text-anchor="end">
+
+        50
+
+    </text>
+
+
+    <text
+        x="592"
+        y="242"
+        fill="#c0caf5"
+        font-family="monospace"
+        font-size="9">
+
+        active days
+
+    </text>
+
+    <text
+        x="815"
+        y="242"
+        fill="#f7768e"
+        font-family="monospace"
+        font-size="10"
+        font-weight="bold"
+        text-anchor="end">
+
+        9
+
+    </text>
+
+
+    <!-- RODAPÉ -->
+
+    <text
+        x="28"
+        y="298"
+        fill="#9aa5ce"
+        opacity="0.7"
+        font-family="monospace"
+        font-size="7"
+        letter-spacing="2">
 
         IARLEI-BARROS · CONTRIBUTION SKYLINE
 
@@ -604,13 +585,14 @@
 
 
     <text
-        x="870"
-        y="302"
-        text-anchor="end"
-        font-family="JetBrains Mono, monospace"
-        font-size="8"
-        fill="#bb9af7"
-        letter-spacing="2">
+        x="815"
+        y="298"
+        fill="#7aa2f7"
+        font-family="monospace"
+        font-size="7"
+        font-weight="bold"
+        letter-spacing="2"
+        text-anchor="end">
 
         TOKYO NIGHT
 
