@@ -67,5 +67,5 @@ Tenho interesse em desenvolvimento de software, principalmente Backend, estudand
 ## Gráfico de Atividade
 
 <p align="center">
-  <img src="https://github-readme-activity-graph.vercel.app/graph?username=Iarlei-Barros&theme=tokyo-night&hide_border=true"/>
+  <img src="./assets/activity-skyline.svg" width="100%" />
 </p>
