@@ -1,0 +1,80 @@
+name: Update Contribution Skyline
+
+on:
+  schedule:
+    # Executa todos os dias às 03:00 UTC
+    - cron: "0 3 * * *"
+
+  # Permite executar manualmente pelo GitHub
+  workflow_dispatch:
+
+  # Também executa quando o script é alterado
+  push:
+    paths:
+      - "scripts/generate_activity_skyline.py"
+      - ".github/workflows/activity-skyline.yml"
+
+
+permissions:
+  contents: write
+
+
+jobs:
+
+  update-skyline:
+
+    runs-on: ubuntu-latest
+
+    steps:
+
+      # ==========================================
+      # Baixar o repositório
+      # ==========================================
+
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+
+      # ==========================================
+      # Configurar Python
+      # ==========================================
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+
+
+      # ==========================================
+      # Gerar SVG
+      # ==========================================
+
+      - name: Generate contribution skyline
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+        run: |
+          python scripts/generate_activity_skyline.py
+
+
+      # ==========================================
+      # Salvar alteração
+      # ==========================================
+
+      - name: Commit updated SVG
+        run: |
+
+          git config user.name "github-actions[bot]"
+
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git add assets/activity-skyline.svg
+
+          if git diff --cached --quiet; then
+            echo "Nenhuma alteração no skyline."
+            exit 0
+          fi
+
+          git commit -m "chore: update contribution skyline"
+
+          git push
