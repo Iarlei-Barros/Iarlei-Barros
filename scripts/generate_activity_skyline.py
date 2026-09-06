@@ -41,13 +41,19 @@ YELLOW = "#e0af68"
 # ============================================================
 
 def github_query():
+
     token = os.environ.get("GITHUB_TOKEN")
 
     if not token:
-        raise RuntimeError("GITHUB_TOKEN não encontrado.")
+        raise RuntimeError(
+            "GITHUB_TOKEN não encontrado."
+        )
 
     today = datetime.now(timezone.utc).date()
-    start = today - timedelta(days=DAYS - 1)
+
+    start = today - timedelta(
+        days=DAYS - 1
+    )
 
     query = """
     query($login: String!, $from: DateTime!, $to: DateTime!) {
@@ -73,14 +79,14 @@ def github_query():
         "to": f"{today}T23:59:59Z"
     }
 
-    data = json.dumps({
+    payload = json.dumps({
         "query": query,
         "variables": variables
     }).encode("utf-8")
 
     request = urllib.request.Request(
         "https://api.github.com/graphql",
-        data=data,
+        data=payload,
         headers={
             "Authorization": f"Bearer {token}",
             "Content-Type": "application/json",
@@ -90,14 +96,26 @@ def github_query():
     )
 
     with urllib.request.urlopen(request) as response:
+
         result = json.loads(
             response.read().decode("utf-8")
         )
 
     if "errors" in result:
-        raise RuntimeError(result["errors"])
+        raise RuntimeError(
+            result["errors"]
+        )
 
-    return result["data"]["user"]["contributionsCollection"]
+    user = result["data"]["user"]
+
+    if user is None:
+        raise RuntimeError(
+            f"Usuário '{USERNAME}' não encontrado."
+        )
+
+    return user[
+        "contributionsCollection"
+    ]
 
 
 # ============================================================
@@ -105,21 +123,31 @@ def github_query():
 # ============================================================
 
 def get_contributions():
+
     collection = github_query()
-    calendar = collection["contributionCalendar"]
+
+    calendar = collection[
+        "contributionCalendar"
+    ]
 
     days = []
 
     for week in calendar["weeks"]:
-        for day in week["contributionDays"]:
+
+        for day in week[
+            "contributionDays"
+        ]:
+
             days.append({
                 "date": day["date"],
-                "count": day["contributionCount"]
+                "count": day[
+                    "contributionCount"
+                ]
             })
 
     days = sorted(
         days,
-        key=lambda x: x["date"]
+        key=lambda item: item["date"]
     )
 
     # Mantém exatamente os últimos 180 dias
@@ -136,7 +164,11 @@ def get_contributions():
         if day["count"] > 0
     )
 
-    return days, total, active_days
+    return (
+        days,
+        total,
+        active_days
+    )
 
 
 # ============================================================
@@ -144,13 +176,20 @@ def get_contributions():
 # ============================================================
 
 def create_towers(days):
+
     towers = []
 
     chunk_size = len(days) / TOWERS
 
     for i in range(TOWERS):
-        start = int(i * chunk_size)
-        end = int((i + 1) * chunk_size)
+
+        start = int(
+            i * chunk_size
+        )
+
+        end = int(
+            (i + 1) * chunk_size
+        )
 
         chunk = days[start:end]
 
@@ -168,42 +207,53 @@ def create_towers(days):
 # CORES DAS TORRES
 # ============================================================
 
-def tower_color(value, maximum):
+def tower_color(
+    value,
+    maximum
+):
 
     if value == 0:
+
         return {
             "front": "#292e42",
             "side": "#1f2335",
             "top": "#3b4261"
         }
 
-    ratio = value / maximum if maximum else 0
+    ratio = (
+        value / maximum
+        if maximum
+        else 0
+    )
 
-    # Atividade baixa
+    # LOW
     if ratio < 0.25:
+
         return {
             "front": BLUE,
             "side": "#3d59a1",
             "top": "#9db8ff"
         }
 
-    # Atividade média
+    # MID
     if ratio < 0.50:
+
         return {
             "front": CYAN,
             "side": "#2b7f91",
             "top": "#a8e8f5"
         }
 
-    # Atividade alta
+    # HIGH
     if ratio < 0.75:
+
         return {
             "front": PURPLE,
             "side": "#7052a8",
             "top": "#d1b9ff"
         }
 
-    # Pico
+    # PEAK
     return {
         "front": PINK,
         "side": "#a33e5f",
@@ -290,7 +340,11 @@ def generate_svg(
     width = 900
     height = 320
 
-    maximum = max(towers) if towers else 1
+    maximum = (
+        max(towers)
+        if towers
+        else 1
+    )
 
     # ========================================================
     # FUNDO
@@ -407,9 +461,9 @@ def generate_svg(
 
     <path
         d="M25 268
-           L510 268
-           L540 252
-           L540 75"
+           L505 268
+           L535 252
+           L535 75"
         fill="none"
         stroke="{GRID}"
         stroke-width="1"/>
@@ -419,8 +473,8 @@ def generate_svg(
 
     <path
         d="M25 268
-           L510 268
-           L540 252
+           L505 268
+           L535 252
            L25 252
            Z"
         fill="url(#floor)"
@@ -433,7 +487,7 @@ def generate_svg(
     <line
         x1="25"
         y1="268"
-        x2="510"
+        x2="505"
         y2="268"
         stroke="{BORDER}"
         stroke-width="1"
@@ -446,46 +500,77 @@ def generate_svg(
 """
 
     # ========================================================
-    # POSICIONAMENTO CORRIGIDO
+    # POSICIONAMENTO DAS TORRES
     # ========================================================
 
-    # A área disponível vai aproximadamente de x=40 até x=490.
-    # As 18 torres ficam todas dentro dessa área.
+    # Área EXCLUSIVA das torres.
+    #
+    # As torres ficam entre x=45 e x=475.
+    # O painel começa em x=565.
+    #
+    # Portanto existe uma distância segura entre eles.
 
-    start_x = 42
+    graph_left = 45
+    graph_right = 475
+
     base_y = 258
 
-    width_tower = 20
-    gap = 5
+    width_tower = 18
+    depth = 7
 
-    max_height = 145
+    if TOWERS > 1:
+
+        gap = (
+            (
+                graph_right
+                - graph_left
+                - width_tower
+            )
+            / (TOWERS - 1)
+        )
+
+    else:
+
+        gap = 0
+
+
+    max_height = 120
+
 
     for i, value in enumerate(towers):
 
-        x = start_x + i * (
-            width_tower + gap
+        x = (
+            graph_left
+            + i * gap
         )
 
         if maximum:
+
             tower_height = (
                 18
-                + (value / maximum)
-                * max_height
+                + (
+                    value
+                    / maximum
+                ) * max_height
             )
+
         else:
+
             tower_height = 18
+
 
         colors = tower_color(
             value,
             maximum
         )
 
+
         svg += tower_svg(
             x=x,
             base_y=base_y,
             width=width_tower,
             height=tower_height,
-            depth=7,
+            depth=depth,
             colors=colors
         )
 
@@ -657,6 +742,7 @@ def generate_svg(
 
     </text>
 
+
     <text
         x="815"
         y="224"
@@ -683,6 +769,7 @@ def generate_svg(
         active days
 
     </text>
+
 
     <text
         x="815"
@@ -743,9 +830,13 @@ def generate_svg(
 
 def main():
 
-    days, total, active_days = get_contributions()
+    days, total, active_days = (
+        get_contributions()
+    )
 
-    towers = create_towers(days)
+    towers = create_towers(
+        days
+    )
 
     svg = generate_svg(
         days,
@@ -754,10 +845,15 @@ def main():
         towers
     )
 
-    os.makedirs(
-        os.path.dirname(OUTPUT_FILE),
-        exist_ok=True
+    output_dir = os.path.dirname(
+        OUTPUT_FILE
     )
+
+    if output_dir:
+        os.makedirs(
+            output_dir,
+            exist_ok=True
+        )
 
     with open(
         OUTPUT_FILE,
@@ -767,10 +863,23 @@ def main():
 
         file.write(svg)
 
-    print("Skyline atualizado!")
-    print(f"Usuário: {USERNAME}")
-    print(f"Contribuições: {total}")
-    print(f"Dias ativos: {active_days}")
+
+    print(
+        "Skyline atualizado!"
+    )
+
+    print(
+        f"Usuário: {USERNAME}"
+    )
+
+    print(
+        f"Contribuições: {total}"
+    )
+
+    print(
+        f"Dias ativos: {active_days}"
+    )
+
     print(
         f"Pico: {max(towers) if towers else 0}"
     )
