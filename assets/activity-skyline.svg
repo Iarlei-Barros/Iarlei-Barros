@@ -1,742 +1,619 @@
 <svg xmlns="http://www.w3.org/2000/svg"
-     viewBox="0 0 900 320"
-     width="900"
-     height="320"
-     role="img"
-     aria-label="Iarlei-Barros Contribution Skyline">
+    viewBox="0 0 900 320"
+    width="900"
+    height="320"
+    role="img"
+    aria-label="Contribution Skyline de Iarlei-Barros">
 
-  <defs>
+    <defs>
 
-    <!-- TOKYO NIGHT BACKGROUND -->
+        <!-- Tokyo Night -->
 
-    <linearGradient id="sky"
-                    x1="0" y1="0"
-                    x2="0" y2="1">
+        <linearGradient
+            id="sky"
+            x1="0"
+            y1="0"
+            x2="0"
+            y2="1">
 
-      <stop offset="0"
-            stop-color="#1a1b26"/>
+            <stop
+                offset="0%"
+                stop-color="#1a1b26"/>
 
-      <stop offset="0.5"
-            stop-color="#16161e"/>
+            <stop
+                offset="55%"
+                stop-color="#16161e"/>
 
-      <stop offset="1"
-            stop-color="#0f111a"/>
+            <stop
+                offset="100%"
+                stop-color="#0f111a"/>
 
-    </linearGradient>
+        </linearGradient>
 
 
-    <!-- GLOW -->
+        <radialGradient
+            id="glow"
+            cx="0.45"
+            cy="1"
+            r="0.7">
 
-    <radialGradient id="glow"
-                    cx="0.5"
-                    cy="1"
-                    r="0.7">
+            <stop
+                offset="0%"
+                stop-color="#bb9af7"
+                stop-opacity="0.28"/>
 
-      <stop offset="0"
-            stop-color="#bb9af7"
-            stop-opacity="0.30"/>
+            <stop
+                offset="100%"
+                stop-color="#bb9af7"
+                stop-opacity="0"/>
 
-      <stop offset="1"
-            stop-color="#bb9af7"
-            stop-opacity="0"/>
+        </radialGradient>
 
-    </radialGradient>
 
+        <filter id="neon">
 
-    <!-- LOW -->
+            <feGaussianBlur
+                stdDeviation="2.5"
+                result="blur"/>
 
-    <linearGradient id="low-top"
-                    x1="0" y1="0"
-                    x2="1" y2="1">
+            <feMerge>
 
-      <stop offset="0"
-            stop-color="#7aa2f7"/>
+                <feMergeNode in="blur"/>
 
-      <stop offset="1"
-            stop-color="#3d59a1"/>
+                <feMergeNode in="SourceGraphic"/>
 
-    </linearGradient>
+            </feMerge>
 
+        </filter>
 
-    <!-- MID -->
+    </defs>
 
-    <linearGradient id="mid-top"
-                    x1="0" y1="0"
-                    x2="1" y2="1">
 
-      <stop offset="0"
-            stop-color="#7dcfff"/>
+    <!-- BACKGROUND -->
 
-      <stop offset="1"
-            stop-color="#2ac3de"/>
+    <rect
+        width="900"
+        height="320"
+        fill="url(#sky)"/>
 
-    </linearGradient>
 
+    <!-- STARS -->
 
-    <!-- HIGH -->
+    <g fill="#c0caf5">
 
-    <linearGradient id="high-top"
-                    x1="0" y1="0"
-                    x2="1" y2="1">
+        <circle cx="70" cy="35" r="0.8"/>
+        <circle cx="160" cy="22" r="1"/>
+        <circle cx="260" cy="50" r="0.7"/>
+        <circle cx="380" cy="28" r="1.1"/>
+        <circle cx="510" cy="58" r="0.8"/>
+        <circle cx="650" cy="32" r="1"/>
+        <circle cx="780" cy="60" r="0.7"/>
 
-      <stop offset="0"
-            stop-color="#bb9af7"/>
+    </g>
 
-      <stop offset="1"
-            stop-color="#7c3aed"/>
 
-    </linearGradient>
+    <!-- HORIZON -->
 
+    <ellipse
+        cx="300"
+        cy="280"
+        rx="390"
+        ry="60"
+        fill="url(#glow)"/>
 
-    <!-- PEAK -->
 
-    <linearGradient id="peak-top"
-                    x1="0" y1="0"
-                    x2="1" y2="1">
-
-      <stop offset="0"
-            stop-color="#f7768e"/>
-
-      <stop offset="1"
-            stop-color="#bb9af7"/>
-
-    </linearGradient>
-
-
-    <!-- NEON -->
-
-    <filter id="neon">
-
-      <feGaussianBlur
-          stdDeviation="2.5"
-          result="blur"/>
-
-      <feMerge>
-
-        <feMergeNode in="blur"/>
-
-        <feMergeNode in="SourceGraphic"/>
-
-      </feMerge>
-
-    </filter>
-
-  </defs>
-
-
-  <!-- ================================= -->
-  <!-- BACKGROUND -->
-  <!-- ================================= -->
-
-  <rect
-      width="900"
-      height="320"
-      fill="url(#sky)"/>
-
-
-  <!-- ================================= -->
-  <!-- STARS -->
-  <!-- ================================= -->
-
-  <g fill="#c0caf5">
-
-    <circle cx="70" cy="35" r="0.8">
-      <animate
-          attributeName="opacity"
-          values="0.3;1;0.3"
-          dur="3s"
-          repeatCount="indefinite"/>
-    </circle>
-
-    <circle cx="160" cy="22" r="1">
-      <animate
-          attributeName="opacity"
-          values="0.5;0.1;0.5"
-          dur="4s"
-          repeatCount="indefinite"/>
-    </circle>
-
-    <circle cx="260" cy="50" r="0.7">
-      <animate
-          attributeName="opacity"
-          values="0.4;1;0.4"
-          dur="3.4s"
-          repeatCount="indefinite"/>
-    </circle>
-
-    <circle cx="380" cy="28" r="1.1">
-      <animate
-          attributeName="opacity"
-          values="0.6;0.2;0.6"
-          dur="2.6s"
-          repeatCount="indefinite"/>
-    </circle>
-
-    <circle cx="510" cy="58" r="0.8">
-      <animate
-          attributeName="opacity"
-          values="0.4;1;0.4"
-          dur="4.6s"
-          repeatCount="indefinite"/>
-    </circle>
-
-    <circle cx="650" cy="32" r="1">
-      <animate
-          attributeName="opacity"
-          values="0.7;0.3;0.7"
-          dur="3s"
-          repeatCount="indefinite"/>
-    </circle>
-
-    <circle cx="780" cy="60" r="0.7">
-      <animate
-          attributeName="opacity"
-          values="0.5;1;0.5"
-          dur="3.6s"
-          repeatCount="indefinite"/>
-    </circle>
-
-  </g>
-
-
-  <!-- ================================= -->
-  <!-- HORIZON GLOW -->
-  <!-- ================================= -->
-
-  <ellipse
-      cx="360"
-      cy="290"
-      rx="480"
-      ry="65"
-      fill="url(#glow)"/>
-
-
-  <!-- ================================= -->
-  <!-- HEADER -->
-  <!-- ================================= -->
-
-  <text
-      x="30"
-      y="30"
-      font-family="'Inter', system-ui, sans-serif"
-      font-size="15"
-      font-weight="700"
-      fill="#c0caf5">
-
-    Contribution Skyline
-
-  </text>
-
-
-  <text
-      x="30"
-      y="49"
-      font-family="'JetBrains Mono', monospace"
-      font-size="9"
-      fill="#bb9af7"
-      letter-spacing="3">
-
-    2026 · IARLEI-BARROS
-
-  </text>
-
-
-  <!-- ================================= -->
-  <!-- GROUND -->
-  <!-- ================================= -->
-
-  <polygon
-      points="20,285 520,285 550,272 50,272"
-      fill="#111522"
-      opacity="0.75"/>
-
-  <polygon
-      points="20,285 520,285 550,272 50,272"
-      fill="none"
-      stroke="#292e42"
-      stroke-width="0.6"/>
-
-
-  <!-- ================================= -->
-  <!-- BACK ROW -->
-  <!-- ================================= -->
-
-
-  <!-- Tower 1 -->
-
-  <polygon
-      points="40,255 64,255 64,175 40,175"
-      fill="#3d59a1"/>
-
-  <polygon
-      points="64,255 76,249 76,169 64,175"
-      fill="#293b73"/>
-
-  <polygon
-      points="40,175 64,175 76,169 52,169"
-      fill="url(#mid-top)"/>
-
-
-  <!-- Tower 2 -->
-
-  <polygon
-      points="80,255 104,255 104,125 80,125"
-      fill="#7c3aed"/>
-
-  <polygon
-      points="104,255 116,249 116,119 104,125"
-      fill="#5b21b6"/>
-
-  <polygon
-      points="80,125 104,125 116,119 92,119"
-      fill="url(#high-top)"/>
-
-
-  <!-- Tower 3 -->
-
-  <polygon
-      points="120,255 144,255 144,185 120,185"
-      fill="#3d59a1"/>
-
-  <polygon
-      points="144,255 156,249 156,179 144,185"
-      fill="#293b73"/>
-
-  <polygon
-      points="120,185 144,185 156,179 132,179"
-      fill="url(#low-top)"/>
-
-
-  <!-- Tower 4 PEAK -->
-
-  <polygon
-      points="160,255 184,255 184,95 160,95"
-      fill="#b44c70"
-      filter="url(#neon)"/>
-
-  <polygon
-      points="184,255 196,249 196,89 184,95"
-      fill="#7a3152"/>
-
-  <polygon
-      points="160,95 184,95 196,89 172,89"
-      fill="url(#peak-top)"/>
-
-
-  <!-- Tower 5 -->
-
-  <polygon
-      points="200,255 224,255 224,155 200,155"
-      fill="#236b7a"/>
-
-  <polygon
-      points="224,255 236,249 236,149 224,155"
-      fill="#174b58"/>
-
-  <polygon
-      points="200,155 224,155 236,149 212,149"
-      fill="url(#mid-top)"/>
-
-
-  <!-- Tower 6 -->
-
-  <polygon
-      points="240,255 264,255 264,115 240,115"
-      fill="#7c3aed"/>
-
-  <polygon
-      points="264,255 276,249 276,109 264,115"
-      fill="#5b21b6"/>
-
-  <polygon
-      points="240,115 264,115 276,109 252,109"
-      fill="url(#high-top)"/>
-
-
-  <!-- Tower 7 -->
-
-  <polygon
-      points="280,255 304,255 304,175 280,175"
-      fill="#236b7a"/>
-
-  <polygon
-      points="304,255 316,249 316,169 304,175"
-      fill="#174b58"/>
-
-  <polygon
-      points="280,175 304,175 316,169 292,169"
-      fill="url(#mid-top)"/>
-
-
-  <!-- Tower 8 -->
-
-  <polygon
-      points="320,255 344,255 344,145 320,145"
-      fill="#7c3aed"/>
-
-  <polygon
-      points="344,255 356,249 356,139 344,145"
-      fill="#5b21b6"/>
-
-  <polygon
-      points="320,145 344,145 356,139 332,139"
-      fill="url(#high-top)"/>
-
-
-  <!-- ================================= -->
-  <!-- FRONT ROW -->
-  <!-- ================================= -->
-
-
-  <!-- Tower 9 -->
-
-  <polygon
-      points="28,275 52,275 52,215 28,215"
-      fill="#3d59a1"/>
-
-  <polygon
-      points="52,275 64,269 64,209 52,215"
-      fill="#293b73"/>
-
-  <polygon
-      points="28,215 52,215 64,209 40,209"
-      fill="url(#low-top)"/>
-
-
-  <!-- Tower 10 -->
-
-  <polygon
-      points="68,275 92,275 92,155 68,155"
-      fill="#7c3aed"/>
-
-  <polygon
-      points="92,275 104,269 104,149 92,155"
-      fill="#5b21b6"/>
-
-  <polygon
-      points="68,155 92,155 104,149 80,149"
-      fill="url(#high-top)"/>
-
-
-  <!-- Tower 11 -->
-
-  <polygon
-      points="108,275 132,275 132,185 108,185"
-      fill="#236b7a"/>
-
-  <polygon
-      points="132,275 144,269 144,179 132,185"
-      fill="#174b58"/>
-
-  <polygon
-      points="108,185 132,185 144,179 120,179"
-      fill="url(#mid-top)"/>
-
-
-  <!-- Tower 12 PEAK -->
-
-  <polygon
-      points="148,275 172,275 172,85 148,85"
-      fill="#b44c70"
-      filter="url(#neon)"/>
-
-  <polygon
-      points="172,275 184,269 184,79 172,85"
-      fill="#7a3152"/>
-
-  <polygon
-      points="148,85 172,85 184,79 160,79"
-      fill="url(#peak-top)"/>
-
-
-  <!-- Tower 13 -->
-
-  <polygon
-      points="188,275 212,275 212,205 188,205"
-      fill="#3d59a1"/>
-
-  <polygon
-      points="212,275 224,269 224,199 212,205"
-      fill="#293b73"/>
-
-  <polygon
-      points="188,205 212,205 224,199 200,199"
-      fill="url(#low-top)"/>
-
-
-  <!-- Tower 14 -->
-
-  <polygon
-      points="228,275 252,275 252,145 228,145"
-      fill="#7c3aed"/>
-
-  <polygon
-      points="252,275 264,269 264,139 252,145"
-      fill="#5b21b6"/>
-
-  <polygon
-      points="228,145 252,145 264,139 240,139"
-      fill="url(#high-top)"/>
-
-
-  <!-- Tower 15 -->
-
-  <polygon
-      points="268,275 292,275 292,175 268,175"
-      fill="#236b7a"/>
-
-  <polygon
-      points="292,275 304,269 304,169 292,175"
-      fill="#174b58"/>
-
-  <polygon
-      points="268,175 292,175 304,169 280,169"
-      fill="url(#mid-top)"/>
-
-
-  <!-- Tower 16 PEAK -->
-
-  <polygon
-      points="308,275 332,275 332,105 308,105"
-      fill="#b44c70"
-      filter="url(#neon)"/>
-
-  <polygon
-      points="332,275 344,269 344,99 332,105"
-      fill="#7a3152"/>
-
-  <polygon
-      points="308,105 332,105 344,99 320,99"
-      fill="url(#peak-top)"/>
-
-
-  <!-- Tower 17 -->
-
-  <polygon
-      points="348,275 372,275 372,195 348,195"
-      fill="#236b7a"/>
-
-  <polygon
-      points="372,275 384,269 384,189 372,195"
-      fill="#174b58"/>
-
-  <polygon
-      points="348,195 372,195 384,189 360,189"
-      fill="url(#mid-top)"/>
-
-
-  <!-- ================================= -->
-  <!-- SIDE PANEL -->
-  <!-- ================================= -->
-
-  <line
-      x1="570"
-      y1="40"
-      x2="570"
-      y2="270"
-      stroke="#292e42"
-      stroke-width="0.7"/>
-
-
-  <g
-      transform="translate(600,70)"
-      font-family="'JetBrains Mono', monospace">
+    <!-- HEADER -->
 
     <text
-        font-size="9"
-        fill="#bb9af7"
-        letter-spacing="3">
+        x="30"
+        y="30"
+        font-family="Inter, system-ui, sans-serif"
+        font-size="15"
+        font-weight="700"
+        fill="#c0caf5">
 
-      — ACTIVITY
+        Contribution Skyline
 
     </text>
 
 
-    <!-- LOW -->
+    <text
+        x="30"
+        y="49"
+        font-family="JetBrains Mono, monospace"
+        font-size="9"
+        fill="#bb9af7"
+        letter-spacing="3">
 
-    <g transform="translate(0,25)">
+        2026 · IARLEI-BARROS
 
-      <rect
-          width="10"
-          height="10"
-          fill="url(#low-top)"/>
-
-      <text
-          x="20"
-          y="9"
-          font-size="9"
-          fill="#a9b1d6">
-
-        low · activity
-
-      </text>
-
-    </g>
+    </text>
 
 
-    <!-- MID -->
+    <!-- GROUND -->
 
-    <g transform="translate(0,45)">
+    <polygon
+        points="20,285 540,285 565,272 45,272"
+        fill="#111522"
+        opacity="0.85"/>
 
-      <rect
-          width="10"
-          height="10"
-          fill="url(#mid-top)"/>
-
-      <text
-          x="20"
-          y="9"
-          font-size="9"
-          fill="#a9b1d6">
-
-        mid · activity
-
-      </text>
-
-    </g>
-
-
-    <!-- HIGH -->
-
-    <g transform="translate(0,65)">
-
-      <rect
-          width="10"
-          height="10"
-          fill="url(#high-top)"/>
-
-      <text
-          x="20"
-          y="9"
-          font-size="9"
-          fill="#a9b1d6">
-
-        high · activity
-
-      </text>
-
-    </g>
-
-
-    <!-- PEAK -->
-
-    <g transform="translate(0,85)">
-
-      <rect
-          width="10"
-          height="10"
-          fill="url(#peak-top)"/>
-
-      <text
-          x="20"
-          y="9"
-          font-size="9"
-          fill="#a9b1d6">
-
-        peak · activity
-
-      </text>
-
-    </g>
-
-
-    <line
-        x1="0"
-        y1="110"
-        x2="170"
-        y2="110"
+    <polygon
+        points="20,285 540,285 565,272 45,272"
+        fill="none"
         stroke="#292e42"
-        stroke-width="0.5"/>
+        stroke-width="0.7"/>
 
 
-    <!-- TOTALS -->
+    <!-- ===================================== -->
+    <!-- BACK ROW -->
+    <!-- ===================================== -->
+
+    <polygon
+        points="43,255 66,255 66,237 43,237"
+        fill="#292e42"/>
+    
+    <polygon
+        points="66,255 77,249 77,231 66,237"
+        fill="#1f2335"/>
+    
+    <polygon
+        points="43,237 66,237 77,231 54,231"
+        fill="#3b4261"/>
+    
+    <polygon
+        points="71,255 94,255 94,237 71,237"
+        fill="#292e42"/>
+    
+    <polygon
+        points="94,255 105,249 105,231 94,237"
+        fill="#1f2335"/>
+    
+    <polygon
+        points="71,237 94,237 105,231 82,231"
+        fill="#3b4261"/>
+    
+    <polygon
+        points="99,255 122,255 122,237 99,237"
+        fill="#292e42"/>
+    
+    <polygon
+        points="122,255 133,249 133,231 122,237"
+        fill="#1f2335"/>
+    
+    <polygon
+        points="99,237 122,237 133,231 110,231"
+        fill="#3b4261"/>
+    
+    <polygon
+        points="127,255 150,255 150,215 127,215"
+        fill="#3d59a1"/>
+    
+    <polygon
+        points="150,255 161,249 161,209 150,215"
+        fill="#293b73"/>
+    
+    <polygon
+        points="127,215 150,215 161,209 138,209"
+        fill="#7aa2f7"/>
+    
+    <polygon
+        points="155,255 178,255 178,237 155,237"
+        fill="#292e42"/>
+    
+    <polygon
+        points="178,255 189,249 189,231 178,237"
+        fill="#1f2335"/>
+    
+    <polygon
+        points="155,237 178,237 189,231 166,231"
+        fill="#3b4261"/>
+    
+    <polygon
+        points="183,255 206,255 206,237 183,237"
+        fill="#292e42"/>
+    
+    <polygon
+        points="206,255 217,249 217,231 206,237"
+        fill="#1f2335"/>
+    
+    <polygon
+        points="183,237 206,237 217,231 194,231"
+        fill="#3b4261"/>
+    
+    <polygon
+        points="211,255 234,255 234,237 211,237"
+        fill="#292e42"/>
+    
+    <polygon
+        points="234,255 245,249 245,231 234,237"
+        fill="#1f2335"/>
+    
+    <polygon
+        points="211,237 234,237 245,231 222,231"
+        fill="#3b4261"/>
+    
+    <polygon
+        points="239,255 262,255 262,237 239,237"
+        fill="#292e42"/>
+    
+    <polygon
+        points="262,255 273,249 273,231 262,237"
+        fill="#1f2335"/>
+    
+    <polygon
+        points="239,237 262,237 273,231 250,231"
+        fill="#3b4261"/>
+    
+    <polygon
+        points="267,255 290,255 290,237 267,237"
+        fill="#292e42"/>
+    
+    <polygon
+        points="290,255 301,249 301,231 290,237"
+        fill="#1f2335"/>
+    
+    <polygon
+        points="267,237 290,237 301,231 278,231"
+        fill="#3b4261"/>
+    
+    <!-- ===================================== -->
+    <!-- FRONT ROW -->
+    <!-- ===================================== -->
+    
+    <polygon
+        points="35,275 58,275 58,257 35,257"
+        fill="#292e42"/>
+    
+    <polygon
+        points="58,275 69,269 69,251 58,257"
+        fill="#1f2335"/>
+    
+    <polygon
+        points="35,257 58,257 69,251 46,251"
+        fill="#3b4261"/>
+    
+    <polygon
+        points="63,275 86,275 86,257 63,257"
+        fill="#292e42"/>
+    
+    <polygon
+        points="86,275 97,269 97,251 86,257"
+        fill="#1f2335"/>
+    
+    <polygon
+        points="63,257 86,257 97,251 74,251"
+        fill="#3b4261"/>
+    
+    <polygon
+        points="91,275 114,275 114,257 91,257"
+        fill="#292e42"/>
+    
+    <polygon
+        points="114,275 125,269 125,251 114,257"
+        fill="#1f2335"/>
+    
+    <polygon
+        points="91,257 114,257 125,251 102,251"
+        fill="#3b4261"/>
+    
+    <polygon
+        points="119,275 142,275 142,257 119,257"
+        fill="#292e42"/>
+    
+    <polygon
+        points="142,275 153,269 153,251 142,257"
+        fill="#1f2335"/>
+    
+    <polygon
+        points="119,257 142,257 153,251 130,251"
+        fill="#3b4261"/>
+    
+    <polygon
+        points="147,275 170,275 170,125 147,125"
+        fill="#b44c70"/>
+    
+    <polygon
+        points="170,275 181,269 181,119 170,125"
+        fill="#7a3152"/>
+    
+    <polygon
+        points="147,125 170,125 181,119 158,119"
+        fill="#f7768e"/>
+    
+        <polygon
+            points="147,125 170,125 181,119 158,119"
+            fill="none"
+            stroke="#f7768e"
+            stroke-width="1.5"
+            filter="url(#neon)"/>
+        
+    <polygon
+        points="175,275 198,275 198,230 175,230"
+        fill="#3d59a1"/>
+    
+    <polygon
+        points="198,275 209,269 209,224 198,230"
+        fill="#293b73"/>
+    
+    <polygon
+        points="175,230 198,230 209,224 186,224"
+        fill="#7aa2f7"/>
+    
+    <polygon
+        points="203,275 226,275 226,244 203,244"
+        fill="#3d59a1"/>
+    
+    <polygon
+        points="226,275 237,269 237,238 226,244"
+        fill="#293b73"/>
+    
+    <polygon
+        points="203,244 226,244 237,238 214,238"
+        fill="#7aa2f7"/>
+    
+    <polygon
+        points="231,275 254,275 254,257 231,257"
+        fill="#292e42"/>
+    
+    <polygon
+        points="254,275 265,269 265,251 254,257"
+        fill="#1f2335"/>
+    
+    <polygon
+        points="231,257 254,257 265,251 242,251"
+        fill="#3b4261"/>
+    
+    <polygon
+        points="259,275 282,275 282,230 259,230"
+        fill="#3d59a1"/>
+    
+    <polygon
+        points="282,275 293,269 293,224 282,230"
+        fill="#293b73"/>
+    
+    <polygon
+        points="259,230 282,230 293,224 270,224"
+        fill="#7aa2f7"/>
+    
+    <line
+        x1="570"
+        y1="40"
+        x2="570"
+        y2="270"
+        stroke="#292e42"
+        stroke-width="0.7"/>
+
+
+    <g
+        transform="translate(600,65)"
+        font-family="JetBrains Mono, monospace">
+
+        <text
+            font-size="9"
+            fill="#bb9af7"
+            letter-spacing="3">
+
+            — ACTIVITY
+
+        </text>
+
+
+        <g transform="translate(0,25)">
+
+            <rect
+                width="10"
+                height="10"
+                fill="#7aa2f7"/>
+
+            <text
+                x="20"
+                y="9"
+                font-size="9"
+                fill="#a9b1d6">
+
+                low · activity
+
+            </text>
+
+        </g>
+
+
+        <g transform="translate(0,45)">
+
+            <rect
+                width="10"
+                height="10"
+                fill="#7dcfff"/>
+
+            <text
+                x="20"
+                y="9"
+                font-size="9"
+                fill="#a9b1d6">
+
+                mid · activity
+
+            </text>
+
+        </g>
+
+
+        <g transform="translate(0,65)">
+
+            <rect
+                width="10"
+                height="10"
+                fill="#bb9af7"/>
+
+            <text
+                x="20"
+                y="9"
+                font-size="9"
+                fill="#a9b1d6">
+
+                high · activity
+
+            </text>
+
+        </g>
+
+
+        <g transform="translate(0,85)">
+
+            <rect
+                width="10"
+                height="10"
+                fill="#f7768e"/>
+
+            <text
+                x="20"
+                y="9"
+                font-size="9"
+                fill="#a9b1d6">
+
+                peak · activity
+
+            </text>
+
+        </g>
+
+
+        <line
+            x1="0"
+            y1="110"
+            x2="190"
+            y2="110"
+            stroke="#292e42"
+            stroke-width="0.5"/>
+
+
+        <text
+            y="135"
+            font-size="9"
+            fill="#bb9af7"
+            letter-spacing="3">
+
+            — PROFILE
+
+        </text>
+
+
+        <text
+            y="157"
+            font-size="9"
+            fill="#a9b1d6">
+
+            contributions
+
+        </text>
+
+        <text
+            x="190"
+            y="157"
+            text-anchor="end"
+            font-size="11"
+            fill="#7dcfff"
+            font-weight="700">
+
+            49
+
+        </text>
+
+
+        <text
+            y="178"
+            font-size="9"
+            fill="#a9b1d6">
+
+            active days
+
+        </text>
+
+        <text
+            x="190"
+            y="178"
+            text-anchor="end"
+            font-size="11"
+            fill="#bb9af7"
+            font-weight="700">
+
+            9
+
+        </text>
+
+
+        <text
+            y="199"
+            font-size="9"
+            fill="#a9b1d6">
+
+            peak period
+
+        </text>
+
+        <text
+            x="190"
+            y="199"
+            text-anchor="end"
+            font-size="11"
+            fill="#f7768e"
+            font-weight="700">
+
+            29
+
+        </text>
+
+
+        <text
+            y="220"
+            font-size="9"
+            fill="#a9b1d6">
+
+            period
+
+        </text>
+
+        <text
+            x="190"
+            y="220"
+            text-anchor="end"
+            font-size="10"
+            fill="#c0caf5"
+            font-weight="700">
+
+            180 DAYS
+
+        </text>
+
+    </g>
+
+
+    <!-- FOOTER -->
 
     <text
-        y="135"
-        font-size="9"
-        fill="#bb9af7"
-        letter-spacing="3">
+        x="30"
+        y="302"
+        font-family="JetBrains Mono, monospace"
+        font-size="8"
+        letter-spacing="2"
+        fill="#565f89">
 
-      — PROFILE
+        IARLEI-BARROS · CONTRIBUTION SKYLINE
 
     </text>
 
 
     <text
-        y="157"
-        font-size="9"
-        fill="#a9b1d6">
-
-      user
-
-    </text>
-
-    <text
-        x="170"
-        y="157"
+        x="870"
+        y="302"
         text-anchor="end"
-        font-size="10"
-        fill="#7dcfff"
-        font-weight="700">
-
-      Iarlei-Barros
-
-    </text>
-
-
-    <text
-        y="178"
-        font-size="9"
-        fill="#a9b1d6">
-
-      year
-
-    </text>
-
-    <text
-        x="170"
-        y="178"
-        text-anchor="end"
-        font-size="10"
+        font-family="JetBrains Mono, monospace"
+        font-size="8"
         fill="#bb9af7"
-        font-weight="700">
+        letter-spacing="2">
 
-      2026
+        TOKYO NIGHT
 
     </text>
-
-  </g>
-
-
-  <!-- ================================= -->
-  <!-- FOOTER -->
-  <!-- ================================= -->
-
-  <g
-      transform="translate(30,295)"
-      font-family="'JetBrains Mono', monospace"
-      font-size="8"
-      letter-spacing="2"
-      fill="#565f89">
-
-    <text>
-      IARLEI-BARROS · CONTRIBUTION SKYLINE
-    </text>
-
-  </g>
-
-
-  <text
-      x="870"
-      y="295"
-      text-anchor="end"
-      font-family="'JetBrains Mono', monospace"
-      font-size="8"
-      fill="#bb9af7"
-      letter-spacing="2">
-
-    TOKYO NIGHT
-
-  </text>
 
 </svg>
