@@ -1,0 +1,105 @@
+<svg xmlns="http://www.w3.org/2000/svg"
+     viewBox="0 0 850 300"
+     width="850"
+     height="300"
+     role="img"
+     aria-label="Iarlei Ferreira - Full Stack Developer">
+
+  <!-- Fundo -->
+  <rect width="850" height="300" fill="#1a1b26"/>
+
+  <!-- Barra do terminal -->
+  <rect x="0" y="0" width="850" height="38" fill="#16161e"/>
+
+  <!-- Botões -->
+  <circle cx="22" cy="19" r="6" fill="#f7768e"/>
+  <circle cx="44" cy="19" r="6" fill="#e0af68"/>
+  <circle cx="66" cy="19" r="6" fill="#9ece6a"/>
+
+  <!-- Nome do terminal -->
+  <text x="425"
+        y="24"
+        text-anchor="middle"
+        font-family="ui-monospace, Menlo, monospace"
+        font-size="12"
+        fill="#565f89">
+    ~/iarlei — bash
+  </text>
+
+  <!-- Linha de comando -->
+  <text x="45"
+        y="82"
+        font-family="ui-monospace, Menlo, monospace"
+        font-size="14"
+        fill="#7dcfff">
+    $ whoami
+  </text>
+
+  <!-- Nome -->
+  <text x="45"
+        y="118"
+        font-family="ui-monospace, Menlo, monospace"
+        font-size="28"
+        font-weight="bold"
+        fill="#bb9af7">
+    Iarlei Ferreira
+  </text>
+
+  <!-- Cargo -->
+  <text x="45"
+        y="151"
+        font-family="ui-monospace, Menlo, monospace"
+        font-size="19"
+        fill="#7aa2f7">
+    Full Stack Developer
+  </text>
+
+  <!-- Cursor -->
+  <rect x="285"
+        y="132"
+        width="3"
+        height="23"
+        fill="#7aa2f7">
+    <animate attributeName="opacity"
+             values="1;0;1"
+             dur="0.9s"
+             repeatCount="indefinite"/>
+  </rect>
+
+  <!-- Informações -->
+  <text x="45"
+        y="190"
+        font-family="ui-monospace, Menlo, monospace"
+        font-size="13"
+        fill="#a9b1d6">
+    currently → Computer Science @ IFCE
+  </text>
+
+  <text x="45"
+        y="216"
+        font-family="ui-monospace, Menlo, monospace"
+        font-size="13"
+        fill="#a9b1d6">
+    focused  → Backend • APIs • JavaScript
+  </text>
+
+  <!-- Stack -->
+  <text x="45"
+        y="252"
+        font-family="ui-monospace, Menlo, monospace"
+        font-size="12"
+        fill="#565f89">
+    Node.js · Express · JavaScript · MySQL · Sequelize · Git
+  </text>
+
+  <!-- Status -->
+  <text x="735"
+        y="252"
+        text-anchor="end"
+        font-family="ui-monospace, Menlo, monospace"
+        font-size="12"
+        fill="#9ece6a">
+    ● learning...
+  </text>
+
+</svg>
