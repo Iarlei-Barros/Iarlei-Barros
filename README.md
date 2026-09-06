@@ -1,4 +1,8 @@
-# Olá, sou o Iarlei Ferreira
+<p align="center">
+  <img src="./assets/banner.svg" width="850">
+</p>
+
+# Sobre mim
 
 **`Desenvolvedor FullStack`**
 
