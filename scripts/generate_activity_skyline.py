@@ -3,6 +3,11 @@ import json
 import urllib.request
 from datetime import datetime, timedelta, timezone
 
+
+# ============================================================
+# CONFIGURAÇÃO
+# ============================================================
+
 USERNAME = "Iarlei-Barros"
 OUTPUT_FILE = "assets/activity-skyline.svg"
 
@@ -85,7 +90,9 @@ def github_query():
     )
 
     with urllib.request.urlopen(request) as response:
-        result = json.loads(response.read().decode("utf-8"))
+        result = json.loads(
+            response.read().decode("utf-8")
+        )
 
     if "errors" in result:
         raise RuntimeError(result["errors"])
@@ -110,19 +117,30 @@ def get_contributions():
                 "count": day["contributionCount"]
             })
 
-    days = sorted(days, key=lambda x: x["date"])
+    days = sorted(
+        days,
+        key=lambda x: x["date"]
+    )
 
-    # Garante exatamente os últimos 180 dias
+    # Mantém exatamente os últimos 180 dias
     days = days[-DAYS:]
 
-    total = sum(day["count"] for day in days)
-    active_days = sum(1 for day in days if day["count"] > 0)
+    total = sum(
+        day["count"]
+        for day in days
+    )
+
+    active_days = sum(
+        1
+        for day in days
+        if day["count"] > 0
+    )
 
     return days, total, active_days
 
 
 # ============================================================
-# TORRES
+# CRIA AS TORRES
 # ============================================================
 
 def create_towers(days):
@@ -136,14 +154,22 @@ def create_towers(days):
 
         chunk = days[start:end]
 
-        value = sum(day["count"] for day in chunk)
+        value = sum(
+            day["count"]
+            for day in chunk
+        )
 
         towers.append(value)
 
     return towers
 
 
+# ============================================================
+# CORES DAS TORRES
+# ============================================================
+
 def tower_color(value, maximum):
+
     if value == 0:
         return {
             "front": "#292e42",
@@ -153,6 +179,7 @@ def tower_color(value, maximum):
 
     ratio = value / maximum if maximum else 0
 
+    # Atividade baixa
     if ratio < 0.25:
         return {
             "front": BLUE,
@@ -160,6 +187,7 @@ def tower_color(value, maximum):
             "top": "#9db8ff"
         }
 
+    # Atividade média
     if ratio < 0.50:
         return {
             "front": CYAN,
@@ -167,6 +195,7 @@ def tower_color(value, maximum):
             "top": "#a8e8f5"
         }
 
+    # Atividade alta
     if ratio < 0.75:
         return {
             "front": PURPLE,
@@ -174,6 +203,7 @@ def tower_color(value, maximum):
             "top": "#d1b9ff"
         }
 
+    # Pico
     return {
         "front": PINK,
         "side": "#a33e5f",
@@ -182,18 +212,26 @@ def tower_color(value, maximum):
 
 
 # ============================================================
-# SVG
+# TORRE 3D
 # ============================================================
 
-def tower_svg(x, base_y, width, height, depth, colors):
+def tower_svg(
+    x,
+    base_y,
+    width,
+    height,
+    depth,
+    colors
+):
+
     x2 = x + width
 
     top_y = base_y - height
 
-    # perspectiva
     dx = depth
     dy = depth * 0.55
 
+    # Frente
     front = (
         f"{x},{top_y} "
         f"{x2},{top_y} "
@@ -201,6 +239,7 @@ def tower_svg(x, base_y, width, height, depth, colors):
         f"{x},{base_y}"
     )
 
+    # Lado direito
     side = (
         f"{x2},{top_y} "
         f"{x2 + dx},{top_y - dy} "
@@ -208,6 +247,7 @@ def tower_svg(x, base_y, width, height, depth, colors):
         f"{x2},{base_y}"
     )
 
+    # Topo
     top = (
         f"{x},{top_y} "
         f"{x2},{top_y} "
@@ -216,82 +256,95 @@ def tower_svg(x, base_y, width, height, depth, colors):
     )
 
     return f"""
-    <polygon points="{side}"
+    <polygon
+        points="{side}"
         fill="{colors['side']}"
         stroke="{GRID}"
         stroke-width="1"/>
 
-    <polygon points="{top}"
+    <polygon
+        points="{top}"
         fill="{colors['top']}"
         stroke="{GRID}"
         stroke-width="1"/>
 
-    <polygon points="{front}"
+    <polygon
+        points="{front}"
         fill="{colors['front']}"
         stroke="{GRID}"
         stroke-width="1"/>
     """
 
 
-def generate_svg(days, total, active_days, towers):
+# ============================================================
+# GERA O SVG
+# ============================================================
+
+def generate_svg(
+    days,
+    total,
+    active_days,
+    towers
+):
+
     width = 900
     height = 320
 
     maximum = max(towers) if towers else 1
-    peak = maximum
 
-    # --------------------------------------------------------
-    # Fundo
-    # --------------------------------------------------------
+    # ========================================================
+    # FUNDO
+    # ========================================================
 
-    svg = f"""<svg xmlns="http://www.w3.org/2000/svg"
+    svg = f"""<svg
+        xmlns="http://www.w3.org/2000/svg"
         width="{width}"
         height="{height}"
         viewBox="0 0 {width} {height}">
 
     <defs>
 
-        <linearGradient id="background"
-            x1="0" y1="0"
-            x2="0" y2="1">
+        <linearGradient
+            id="background"
+            x1="0"
+            y1="0"
+            x2="0"
+            y2="1">
 
-            <stop offset="0%"
+            <stop
+                offset="0%"
                 stop-color="{BG}"/>
 
-            <stop offset="100%"
+            <stop
+                offset="100%"
                 stop-color="{BG_DARK}"/>
 
         </linearGradient>
 
-        <linearGradient id="floor"
-            x1="0" y1="0"
-            x2="0" y2="1">
 
-            <stop offset="0%"
+        <linearGradient
+            id="floor"
+            x1="0"
+            y1="0"
+            x2="0"
+            y2="1">
+
+            <stop
+                offset="0%"
                 stop-color="{BG_LIGHT}"/>
 
-            <stop offset="100%"
+            <stop
+                offset="100%"
                 stop-color="{BG_DARK}"/>
 
         </linearGradient>
-
-        <filter id="softGlow">
-
-            <feGaussianBlur
-                stdDeviation="5"
-                result="blur"/>
-
-            <feMerge>
-                <feMergeNode in="blur"/>
-                <feMergeNode in="SourceGraphic"/>
-            </feMerge>
-
-        </filter>
 
     </defs>
 
 
+    <!-- ================================================== -->
     <!-- BACKGROUND -->
+    <!-- ================================================== -->
 
     <rect
         width="900"
@@ -299,9 +352,13 @@ def generate_svg(days, total, active_days, towers):
         fill="url(#background)"/>
 
 
+    <!-- ================================================== -->
     <!-- ESTRELAS -->
+    <!-- ================================================== -->
 
-    <g fill="{TEXT_SECONDARY}" opacity="0.75">
+    <g
+        fill="{TEXT_SECONDARY}"
+        opacity="0.75">
 
         <circle cx="250" cy="28" r="1"/>
         <circle cx="355" cy="54" r="1"/>
@@ -314,7 +371,9 @@ def generate_svg(days, total, active_days, towers):
     </g>
 
 
+    <!-- ================================================== -->
     <!-- TÍTULO -->
+    <!-- ================================================== -->
 
     <text
         x="28"
@@ -342,76 +401,104 @@ def generate_svg(days, total, active_days, towers):
     </text>
 
 
+    <!-- ================================================== -->
     <!-- ÁREA DO GRÁFICO -->
+    <!-- ================================================== -->
 
     <path
-        d="M20 268 L510 268 L545 250 L545 75"
+        d="M25 268
+           L510 268
+           L540 252
+           L540 75"
         fill="none"
         stroke="{GRID}"
         stroke-width="1"/>
 
 
+    <!-- Piso -->
+
     <path
-        d="M20 268 L510 268 L545 250"
+        d="M25 268
+           L510 268
+           L540 252
+           L25 252
+           Z"
         fill="url(#floor)"
         stroke="{GRID}"
         stroke-width="1"/>
 
 
-    <!-- LINHA DE HORIZONTE -->
+    <!-- Linha principal -->
 
     <line
-        x1="20"
+        x1="25"
         y1="268"
-        x2="545"
+        x2="510"
         y2="268"
         stroke="{BORDER}"
         stroke-width="1"
         opacity="0.7"/>
 
 
+    <!-- ================================================== -->
     <!-- TORRES -->
+    <!-- ================================================== -->
 """
 
-    # --------------------------------------------------------
-    # Torres
-    # --------------------------------------------------------
+    # ========================================================
+    # POSICIONAMENTO CORRIGIDO
+    # ========================================================
 
-    start_x = 48
+    # A área disponível vai aproximadamente de x=40 até x=490.
+    # As 18 torres ficam todas dentro dessa área.
+
+    start_x = 42
     base_y = 258
 
-    width_tower = 34
-    gap = 7
+    width_tower = 20
+    gap = 5
 
     max_height = 145
 
     for i, value in enumerate(towers):
 
-        x = start_x + i * (width_tower + gap)
+        x = start_x + i * (
+            width_tower + gap
+        )
 
         if maximum:
-            tower_height = 18 + (value / maximum) * max_height
+            tower_height = (
+                18
+                + (value / maximum)
+                * max_height
+            )
         else:
             tower_height = 18
 
-        colors = tower_color(value, maximum)
+        colors = tower_color(
+            value,
+            maximum
+        )
 
         svg += tower_svg(
             x=x,
             base_y=base_y,
             width=width_tower,
             height=tower_height,
-            depth=9,
+            depth=7,
             colors=colors
         )
 
-    # --------------------------------------------------------
+
+    # ========================================================
     # PAINEL DIREITO
-    # --------------------------------------------------------
+    # ========================================================
 
     svg += f"""
 
+    <!-- ================================================== -->
     <!-- DIVISÓRIA -->
+    <!-- ================================================== -->
 
     <line
         x1="565"
@@ -422,7 +509,9 @@ def generate_svg(days, total, active_days, towers):
         stroke-width="1"/>
 
 
+    <!-- ================================================== -->
     <!-- ACTIVITY -->
+    <!-- ================================================== -->
 
     <text
         x="592"
@@ -437,8 +526,13 @@ def generate_svg(days, total, active_days, towers):
     </text>
 
 
-    <rect x="592" y="85"
-        width="11" height="11"
+    <!-- LOW -->
+
+    <rect
+        x="592"
+        y="85"
+        width="11"
+        height="11"
         rx="1"
         fill="{BLUE}"/>
 
@@ -454,8 +548,13 @@ def generate_svg(days, total, active_days, towers):
     </text>
 
 
-    <rect x="592" y="106"
-        width="11" height="11"
+    <!-- MID -->
+
+    <rect
+        x="592"
+        y="106"
+        width="11"
+        height="11"
         rx="1"
         fill="{CYAN}"/>
 
@@ -471,8 +570,13 @@ def generate_svg(days, total, active_days, towers):
     </text>
 
 
-    <rect x="592" y="127"
-        width="11" height="11"
+    <!-- HIGH -->
+
+    <rect
+        x="592"
+        y="127"
+        width="11"
+        height="11"
         rx="1"
         fill="{PURPLE}"/>
 
@@ -488,7 +592,11 @@ def generate_svg(days, total, active_days, towers):
     </text>
 
 
-    <rect x="592" y="148"
+    <!-- PEAK -->
+
+    <rect
+        x="592"
+        y="148"
         width="11"
         height="11"
         rx="1"
@@ -506,7 +614,9 @@ def generate_svg(days, total, active_days, towers):
     </text>
 
 
+    <!-- ================================================== -->
     <!-- SEPARADOR -->
+    <!-- ================================================== -->
 
     <line
         x1="592"
@@ -517,7 +627,9 @@ def generate_svg(days, total, active_days, towers):
         stroke-width="1"/>
 
 
+    <!-- ================================================== -->
     <!-- PROFILE -->
+    <!-- ================================================== -->
 
     <text
         x="592"
@@ -531,6 +643,8 @@ def generate_svg(days, total, active_days, towers):
 
     </text>
 
+
+    <!-- Contributions -->
 
     <text
         x="592"
@@ -557,6 +671,8 @@ def generate_svg(days, total, active_days, towers):
     </text>
 
 
+    <!-- Active days -->
+
     <text
         x="592"
         y="242"
@@ -582,7 +698,9 @@ def generate_svg(days, total, active_days, towers):
     </text>
 
 
+    <!-- ================================================== -->
     <!-- RODAPÉ -->
+    <!-- ================================================== -->
 
     <text
         x="28"
@@ -612,6 +730,7 @@ def generate_svg(days, total, active_days, towers):
 
     </text>
 
+
 </svg>
 """
 
@@ -623,6 +742,7 @@ def generate_svg(days, total, active_days, towers):
 # ============================================================
 
 def main():
+
     days, total, active_days = get_contributions()
 
     towers = create_towers(days)
@@ -644,13 +764,16 @@ def main():
         "w",
         encoding="utf-8"
     ) as file:
+
         file.write(svg)
 
     print("Skyline atualizado!")
     print(f"Usuário: {USERNAME}")
     print(f"Contribuições: {total}")
     print(f"Dias ativos: {active_days}")
-    print(f"Pico: {max(towers) if towers else 0}")
+    print(
+        f"Pico: {max(towers) if towers else 0}"
+    )
 
 
 if __name__ == "__main__":
