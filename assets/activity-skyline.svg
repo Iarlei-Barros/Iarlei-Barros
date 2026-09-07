@@ -453,19 +453,19 @@
         stroke-width="1"/>
     
     <polygon
-        points="475.0,180.0 482.0,176.15 482.0,254.15 475.0,258"
+        points="475.0,174.0 482.0,170.15 482.0,254.15 475.0,258"
         fill="#7052a8"
         stroke="#292e42"
         stroke-width="1"/>
 
     <polygon
-        points="457.0,180.0 475.0,180.0 482.0,176.15 464.0,176.15"
+        points="457.0,174.0 475.0,174.0 482.0,170.15 464.0,170.15"
         fill="#d1b9ff"
         stroke="#292e42"
         stroke-width="1"/>
 
     <polygon
-        points="457.0,180.0 475.0,180.0 475.0,258 457.0,258"
+        points="457.0,174.0 475.0,174.0 475.0,258 457.0,258"
         fill="#bb9af7"
         stroke="#292e42"
         stroke-width="1"/>
@@ -642,7 +642,7 @@
         font-weight="bold"
         text-anchor="end">
 
-        53
+        54
 
     </text>
 
@@ -670,7 +670,7 @@
         font-weight="bold"
         text-anchor="end">
 
-        10
+        11
 
     </text>
 
@@ -692,20 +692,6 @@
 
     </text>
 
-
-    <text
-        x="815"
-        y="298"
-        fill="#7aa2f7"
-        font-family="monospace"
-        font-size="7"
-        font-weight="bold"
-        letter-spacing="2"
-        text-anchor="end">
-
-        TOKYO NIGHT
-
-    </text>
 
 
 </svg>
