@@ -803,20 +803,6 @@ def generate_svg(
     </text>
 
 
-    <text
-        x="815"
-        y="298"
-        fill="{BLUE}"
-        font-family="monospace"
-        font-size="7"
-        font-weight="bold"
-        letter-spacing="2"
-        text-anchor="end">
-
-        TOKYO NIGHT
-
-    </text>
-
 
 </svg>
 """
