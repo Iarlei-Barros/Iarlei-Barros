@@ -14,58 +14,39 @@ on:
       - "scripts/generate_activity_skyline.py"
       - ".github/workflows/activity-skyline.yml"
 
-
 permissions:
   contents: write
 
+# Evita duas execuções do skyline ao mesmo tempo
+concurrency:
+  group: update-skyline
+  cancel-in-progress: true
 
 jobs:
-
   update-skyline:
-
     runs-on: ubuntu-latest
 
     steps:
 
-      # ==========================================
-      # Baixar o repositório
-      # ==========================================
-
       - name: Checkout repository
         uses: actions/checkout@v4
-
-
-      # ==========================================
-      # Configurar Python
-      # ==========================================
+        with:
+          fetch-depth: 0
 
       - name: Setup Python
         uses: actions/setup-python@v5
         with:
           python-version: "3.x"
 
-
-      # ==========================================
-      # Gerar SVG
-      # ==========================================
-
       - name: Generate contribution skyline
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
         run: |
           python scripts/generate_activity_skyline.py
 
-
-      # ==========================================
-      # Salvar alteração
-      # ==========================================
-
       - name: Commit updated SVG
         run: |
-
           git config user.name "github-actions[bot]"
-
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
           git add assets/activity-skyline.svg
@@ -77,4 +58,5 @@ jobs:
 
           git commit -m "chore: update contribution skyline"
 
-          git push
+          git pull --rebase origin main
+          git push origin main
